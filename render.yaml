@@ -3,5 +3,5 @@ services:
     name: telegram-bot-autoreply
     env: python
     plan: free
-    buildCommand: pip install -e .
+    buildCommand: pip install .
     startCommand: python main.py
