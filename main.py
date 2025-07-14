@@ -22,7 +22,6 @@ async def main():
     await app.start()
     await app.updater.start_polling()
 
-    # Mantener el bot vivo
     while True:
         await asyncio.sleep(60)
 
