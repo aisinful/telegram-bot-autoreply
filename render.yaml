@@ -1,6 +1,9 @@
 services:
   - type: web
-    name: telegram-autoreply-bot
-    runtime: python
+    name: telegram-bot-autoreply
+    env: python
+    plan: free
     buildCommand: pip install -r requirements.txt
     startCommand: python main.py
+    environment:
+      pythonVersion: 3.10.13
