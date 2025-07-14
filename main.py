@@ -5,7 +5,8 @@ from telegram.ext import ApplicationBuilder, MessageHandler, ContextTypes, filte
 
 async def auto_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "Hola! Gracias por mandarme un mensaje 💕 Por desgracia recibo demasiados mensajes por aquí. "
+        "Hola! Gracias por mandarme un mensaje 💕 "
+        "Por desgracia recibo demasiados mensajes por aquí. "
         "Si quieres hablar conmigo, puedes contactarme en mi Fansly u Only link.me/kalullamas"
     )
 
