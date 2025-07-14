@@ -3,7 +3,7 @@ services:
     name: telegram-bot-autoreply
     env: python
     plan: free
-    buildCommand: pip install .
+    buildCommand: pip install -e .
     startCommand: python main.py
     environment:
       pythonVersion: 3.10.13
