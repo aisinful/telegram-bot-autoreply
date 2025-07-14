@@ -1,7 +1,5 @@
 services:
-  - type: web
+  - type: worker
     name: telegram-bot-autoreply
-    env: python
+    env: docker
     plan: free
-    buildCommand: pip install .
-    startCommand: python main.py

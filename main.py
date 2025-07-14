@@ -4,7 +4,10 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, ContextTypes, filters
 
 async def auto_reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Hola! Gracias por mandarme un mensaje 💕 Por desgracia recibo demasiados mensajes por aquí. Si quieres hablar conmigo, puedes contactarme en mi Fansly u Only link.me/kalullamas")
+    await update.message.reply_text(
+        "Hola! Gracias por mandarme un mensaje 💕 Por desgracia recibo demasiados mensajes por aquí. "
+        "Si quieres hablar conmigo, puedes contactarme en mi Fansly u Only link.me/kalullamas"
+    )
 
 async def main():
     BOT_TOKEN = os.getenv("BOT_TOKEN")
@@ -14,12 +17,11 @@ async def main():
     app = ApplicationBuilder().token(BOT_TOKEN).build()
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, auto_reply))
 
-    # Ejecuta el bot en segundo plano
     await app.initialize()
     await app.start()
     await app.updater.start_polling()
 
-    # Bucle para mantener vivo el proceso
+    # Mantener el bot vivo
     while True:
         await asyncio.sleep(60)
 
